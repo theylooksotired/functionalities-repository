@@ -1,0 +1,370 @@
+{
+  "@context": {
+    "asawoo": "http://www.asawoo.com/#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+
+
+
+
+
+
+    {"_comment":"******** STRUCTURE ********"},
+    {
+      "@id": "asawoo:Functionality",
+      "@type": "owl:Class"
+    },
+    {
+      "@id": "asawoo:Capability",
+      "@type": "owl:Class"
+    },
+    {
+      "@id": "asawoo:Appliance",
+      "@type": "owl:Class"
+    },
+    {
+      "@id": "asawoo:Actuator",
+      "@type": "owl:Class",
+      "rdfs:subClassOf": {
+        "@id": "asawoo:Capability"
+      }
+    },
+    {
+      "@id": "asawoo:Sensor",
+      "@type": "owl:Class",
+      "rdfs:subClassOf": {
+        "@id": "asawoo:Capability"
+      }
+    },
+    {
+      "@id": "asawoo:Network",
+      "@type": "owl:Class",
+      "rdfs:subClassOf": {
+        "@id": "asawoo:Capability"
+      }
+    },
+    {
+      "@id": "asawoo:Processor",
+      "@type": "owl:Class",
+      "rdfs:subClassOf": {
+        "@id": "asawoo:Capability"
+      }
+    },
+    {
+      "@id": "asawoo:isImplementedBy",
+      "@type": [
+        "owl:ObjectProperty",
+        "owl:TransitiveProperty"
+      ],
+      "rdfs:domain": {
+        "@id": "asawoo:Functionality"
+      },
+      "rdfs:range": {
+        "@id": "asawoo:Capability"
+      }
+    },
+    {
+      "@id": "asawoo:isComposedOf",
+      "@type": [
+        "owl:ObjectProperty",
+        "owl:TransitiveProperty"
+      ],
+      "rdfs:domain": {
+        "@id": "asawoo:Functionality"
+      },
+      "rdfs:range": {
+        "@id": "asawoo:Functionality"
+      }
+    },
+    {
+      "@id": "asawoo:hasCapability",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "Specify that an appliance has the given capability",
+      "rdfs:domain": {
+        "@id": "asawoo:Appliance"
+      },
+      "rdfs:range": {
+        "@id": "asawoo:Capability"
+      }
+    },
+
+
+
+
+
+
+    {"_comment":"******** LIST OF CAPABILITIES ********"},
+    {
+      "@id": "asawoo:call",
+      "@type": [
+        "owl:NamedIndividual",
+        "asawoo:Capability"
+      ]
+    },
+    {
+      "@id": "asawoo:download",
+      "@type": [
+        "owl:NamedIndividual",
+        "asawoo:Capability"
+      ]
+    },
+    {
+      "@id": "asawoo:photo",
+      "@type": [
+        "owl:NamedIndividual",
+        "asawoo:Capability"
+      ]
+    },
+    {
+      "@id": "asawoo:video",
+      "@type": [
+        "owl:NamedIndividual",
+        "asawoo:Capability"
+      ]
+    },
+    {
+      "@id": "asawoo:sms",
+      "@type": [
+        "owl:NamedIndividual",
+        "asawoo:Capability"
+      ]
+    },
+    {
+      "@id": "asawoo:startApp",
+      "@type": [
+        "owl:NamedIndividual",
+        "asawoo:Capability"
+      ]
+    },
+    {
+      "@id": "asawoo:stopApp",
+      "@type": [
+        "owl:NamedIndividual",
+        "asawoo:Capability"
+      ]
+    },
+    {
+      "@id": "asawoo:temperatureDecrease",
+      "@type": [
+        "owl:NamedIndividual",
+        "asawoo:Capability"
+      ]
+    },
+    {
+      "@id": "asawoo:temperatureIncrease",
+      "@type": [
+        "owl:NamedIndividual",
+        "asawoo:Capability"
+      ]
+    },
+    {
+      "@id": "asawoo:temperatureSense",
+      "@type": [
+        "owl:NamedIndividual",
+        "asawoo:Capability"
+      ]
+    },
+
+
+
+
+
+
+    {"_comment":"******** LIST OF SIMPLE FUNCTIONALITIES ********"},
+    {
+      "@id": "asawoo:functionalityCall",
+      "@type": [
+        "asawoo:Functionality",
+        "owl:NamedIndividual"
+      ],
+      "asawoo:isImplementedBy": {
+        "@id": "asawoo:call"
+      }
+    },
+    {
+      "@id": "asawoo:functionalityDownload",
+      "@type": [
+        "asawoo:Functionality",
+        "owl:NamedIndividual"
+      ],
+      "asawoo:isImplementedBy": {
+        "@id": "asawoo:download"
+      }
+    },
+    {
+      "@id": "asawoo:functionalityPhoto",
+      "@type": [
+        "asawoo:Functionality",
+        "owl:NamedIndividual"
+      ],
+      "asawoo:isImplementedBy": {
+        "@id": "asawoo:photo"
+      }
+    },
+    {
+      "@id": "asawoo:functionalityVideo",
+      "@type": [
+        "asawoo:Functionality",
+        "owl:NamedIndividual"
+      ],
+      "asawoo:isImplementedBy": {
+        "@id": "asawoo:video"
+      }
+    },
+    {
+      "@id": "asawoo:functionalitySms",
+      "@type": [
+        "asawoo:Functionality",
+        "owl:NamedIndividual"
+      ],
+      "asawoo:isImplementedBy": {
+        "@id": "asawoo:sms"
+      }
+    },
+    {
+      "@id": "asawoo:functionalityStartApp",
+      "@type": [
+        "asawoo:Functionality",
+        "owl:NamedIndividual"
+      ],
+      "asawoo:isImplementedBy": {
+        "@id": "asawoo:startApp"
+      }
+    },
+    {
+      "@id": "asawoo:functionalityStopApp",
+      "@type": [
+        "asawoo:Functionality",
+        "owl:NamedIndividual"
+      ],
+      "asawoo:isImplementedBy": {
+        "@id": "asawoo:stopApp"
+      }
+    },
+    {
+      "@id": "asawoo:functionalityTemperatureDecrease",
+      "@type": [
+        "asawoo:Functionality",
+        "owl:NamedIndividual"
+      ],
+      "asawoo:isImplementedBy": {
+        "@id": "asawoo:temperatureDecrease"
+      }
+    },
+    {
+      "@id": "asawoo:functionalityTemperatureIncrease",
+      "@type": [
+        "asawoo:Functionality",
+        "owl:NamedIndividual"
+      ],
+      "asawoo:isImplementedBy": {
+        "@id": "asawoo:temperatureIncrease"
+      }
+    },
+    {
+      "@id": "asawoo:functionalityTemperatureSense",
+      "@type": [
+        "asawoo:Functionality",
+        "owl:NamedIndividual"
+      ],
+      "asawoo:isImplementedBy": {
+        "@id": "asawoo:temperatureSense"
+      }
+    },
+
+
+
+
+
+    {"_comment":"******** LIST OF COMPOSED FUNCTIONALITIES ********"},
+    {
+      "@id": "asawoo:functionalityTemperatureRegulation",
+      "@type": [
+        "asawoo:Functionality",
+        "owl:NamedIndividual"
+      ],
+      "asawoo:isComposedOf": [
+        {
+          "@id": "asawoo:functionalityTemperatureSense"
+        },
+        {
+          "@id": "asawoo:functionalityTemperatureIncrease"
+        },
+        {
+          "@id": "asawoo:functionalityTemperatureDecrease"
+        }
+      ]
+    },
+
+
+
+
+
+
+    {"_comment":"******** LIST OF APPLIANCES ********"},
+    {
+      "@id": "asawoo:appliancePhone",
+      "@type": [
+        "owl:NamedIndividual",
+        "asawoo:Appliance"
+      ],
+      "asawoo:hasCapability": [
+        {
+          "@id": "asawoo:call"
+        },
+        {
+          "@id": "asawoo:download"
+        },
+        {
+          "@id": "asawoo:photo"
+        },
+        {
+          "@id": "asawoo:video"
+        },
+        {
+          "@id": "asawoo:sms"
+        },
+        {
+          "@id": "asawoo:startApp"
+        },
+        {
+          "@id": "asawoo:stopApp"
+        }        
+      ]
+    },
+    {
+      "@id": "asawoo:applianceCooler",
+      "@type": [
+        "owl:NamedIndividual",
+        "asawoo:Appliance"
+      ],
+      "asawoo:hasCapability": {
+          "@id": "asawoo:temperatureDecrease"
+      }
+    },
+    {
+      "@id": "asawoo:applianceHeater",
+      "@type": [
+        "owl:NamedIndividual",
+        "asawoo:Appliance"
+      ],
+      "asawoo:hasCapability": {
+          "@id": "asawoo:temperatureHeater"
+      }
+    },
+    {
+      "@id": "asawoo:applianceSensor",
+      "@type": [
+        "owl:NamedIndividual",
+        "asawoo:Appliance"
+      ],
+      "asawoo:hasCapability": {
+          "@id": "asawoo:temperatureSensor"
+      }
+    }
+  ]
+}

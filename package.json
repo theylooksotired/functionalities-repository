@@ -1,0 +1,18 @@
+{
+  "name": "functionalities-simple-server",
+  "description": "ASAWoO - Functionalities Simple Server",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/theylooksotired/functionalities-simple-server.git"
+  },
+  "dependencies": {
+    "express": "~3.4.0",
+    "markedejs": "0.1.0",
+    "ejs": "*",
+    "app": "*"
+  }
+}
